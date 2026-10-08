@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Upgrade Your Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff1f6;--card:#fffafc;--ink:#3a1a2e;--mute:#8a6578;--line:#ffd3e2;--acc:#e8487f;--acc2:#ff8fa8;--ok:#e8487f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#24101d;--card:#331727;--ink:#ffeaf2;--mute:#d7a9bf;--line:#512640}}
+:root[data-theme="dark"]{--bg:#24101d;--card:#331727;--ink:#ffeaf2;--mute:#d7a9bf;--line:#512640}
+:root[data-theme="light"]{--bg:#fff1f6;--card:#fffafc;--ink:#3a1a2e;--mute:#8a6578;--line:#ffd3e2}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{background:radial-gradient(90% 50% at 50% 0%,rgba(255,143,168,.28),transparent 70%),var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;display:flex;justify-content:center;padding:0 16px}
+.app{width:min(100%,26rem);padding:22px 0 40px}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.bar b{font-family:'Dancing Script',cursive;font-weight:700;font-size:1.7rem}
+.bar b:after{content:" \2665";color:var(--acc);font-size:1.1rem}
+.chip{font-size:.78rem;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--mute)}
+h1{font-family:'Dancing Script',cursive;font-size:2.6rem;line-height:1.05;font-weight:700;margin:0 0 10px}
+.sub{color:var(--mute);line-height:1.5;margin:0 0 22px}
+.plan{background:var(--card);border:1.5px solid var(--line);border-radius:26px;padding:20px;margin-bottom:14px}
+.plan h2{margin:0;font-size:1.1rem;font-weight:800}
+.plan .price{font-size:.88rem;color:var(--mute);margin:3px 0 14px}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plan li{display:flex;gap:10px;line-height:1.35;font-size:.96rem}
+.plan li:before{content:"\2665";color:var(--acc);font-size:.9rem;padding-top:2px}
+.plan.cur li:before{color:var(--acc2);opacity:.7}
+.plan.up{border-color:var(--acc);box-shadow:0 14px 34px -16px var(--acc);position:relative}
+.tag{position:absolute;top:-11px;left:18px;background:linear-gradient(90deg,var(--acc),var(--acc2));color:#fff;font-size:.72rem;font-weight:800;padding:4px 11px;border-radius:999px}
+.plan.up .price{color:var(--ink);font-weight:700}
+.more{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem}
+.cta{display:grid;gap:10px;margin-top:20px}
+button{font:inherit;font-weight:700;font-size:1rem;border:0;border-radius:999px;padding:16px;cursor:pointer;width:100%}
+button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.pri{background:linear-gradient(90deg,var(--acc),var(--acc2));color:#fff;box-shadow:0 10px 24px -10px var(--acc)}
+.sec{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.fine{text-align:center;color:var(--mute);font-size:.8rem;margin-top:14px;line-height:1.5}
+.view{display:none}.view.on{display:block;animation:in .5s ease both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rows{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:6px 20px;margin:20px 0}
+.rows div{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.rows div:last-child{border:0}
+.rows span{color:var(--mute)}.rows b{text-align:right}
+.check{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;margin:20px auto 18px;animation:pop .6s cubic-bezier(.3,1.6,.5,1) both}
+.check svg{width:42px;height:42px;stroke:#fff;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:50;stroke-dashoffset:50;animation:draw .5s .35s ease forwards}
+@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:none;opacity:1}}
+@keyframes draw{to{stroke-dashoffset:0}}
+.center{text-align:center}
+.dist{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:16px 18px 14px;margin-bottom:22px}
+.dist .r{display:flex;align-items:center;gap:10px}
+.dist .n{flex:none;text-align:center;font-weight:700;font-size:.9rem;min-width:4.2rem}
+.dist .n small{display:block;font-weight:500;color:var(--mute);font-size:.74rem;margin-top:2px}
+.dist .dot{font-size:1.5rem;line-height:1;color:var(--acc);margin:0 auto 6px}.dist .dot:before{content:"\2665"}
+.dist .lnk{flex:1;position:relative;height:14px;margin-top:-18px}
+.dist .lnk:before{content:"";position:absolute;left:0;right:0;top:6px;border-top:2.5px dashed var(--line)}
+.dist .lnk i{position:absolute;top:-4px;left:0;width:18px;height:18px;font-style:normal;font-size:1.1rem;line-height:1;color:var(--acc);animation:ping 4s ease-in-out infinite alternate}
+@keyframes ping{to{left:calc(100% - 18px)}}
+.dist p{margin:12px 0 0;text-align:center;font-size:.85rem;color:var(--mute)}
+.dist.near .lnk i{animation:none;left:calc(50% - 9px)}
+@media (prefers-reduced-motion:reduce){.dist .lnk i{animation:none;left:calc(50% - 9px)}}
+@media (prefers-reduced-motion:reduce){.view.on,.check,.check svg{animation:none}.check svg{stroke-dashoffset:0}}
+.fh{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.fh span{position:absolute;bottom:-40px;color:var(--acc);opacity:0;animation:fl linear infinite}
+@keyframes fl{0%{transform:translateY(0) rotate(-8deg);opacity:0}10%{opacity:.28}90%{opacity:.28}100%{transform:translateY(-110vh) rotate(10deg);opacity:0}}
+.app{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){.fh{display:none}}
+</style>
+</head>
+<body>
+<div class="fh" id="fh" aria-hidden="true"></div>
+<div class="app">
+  <div class="bar"><b id="brand"></b><span class="chip" id="chip">Current plan: Friends</span></div>
+
+  <div class="dist" id="dist">
+    <div class="r">
+      <div class="n"><div class="dot"></div><span id="c1"></span><small id="t1"></small></div>
+      <div class="lnk"><i>♥</i></div>
+      <div class="n"><div class="dot"></div><span id="c2"></span><small id="t2"></small></div>
+    </div>
+    <p id="dtxt"></p>
+  </div>
+
+  <section class="view on" id="v1">
+    <h1 id="h"></h1>
+    <p class="sub" id="sub"></p>
+    <div class="plan cur">
+      <h2>Friends</h2><p class="price">Your current plan · Long distance</p>
+      <ul><li>Calls that run way past bedtime</li><li>Inside jokes only we get</li><li>Someone who shows up, even from far away</li></ul>
+    </div>
+    <div class="plan up">
+      <span class="tag">Picked with my whole heart</span>
+      <h2>Girlfriend</h2><p class="price">Free forever · No trial period</p>
+      <ul id="perks"></ul>
+      <p class="more">Includes everything in Friends. Nothing you have now goes away.</p>
+    </div>
+    <div class="cta">
+      <button class="pri" id="go">Yes, upgrade me</button>
+      <button class="sec" id="go2">Yes, obviously (took me long enough)</button>
+    </div>
+    <p class="fine">You mean the world to me, whatever happens next. ♥</p>
+  </section>
+
+  <section class="view" id="v2">
+    <h1>Review your upgrade</h1>
+    <p class="sub">Please read the terms carefully. They're short.</p>
+    <div class="rows" id="terms"></div>
+    <div class="cta">
+      <button class="pri" id="confirm">Confirm upgrade</button>
+      <button class="sec" id="back">Go back</button>
+    </div>
+  </section>
+
+  <section class="view center" id="v3">
+    <div class="check"><svg viewBox="0 0 48 48"><path d="M10 25l9 9 19-20"/></svg></div>
+    <h1>You're upgraded.</h1>
+    <p class="sub">Welcome to Girlfriend. Screenshot this and send it to me, I'd love to see it.</p>
+    <div class="rows" id="receipt" style="text-align:left"></div>
+  </section>
+
+</div>
+<script>
+// Personalize: ?to=Maya&from=Alex&p1=...&p2=...&p3=...
+var P=new URLSearchParams(location.search),g=function(k,d){return P.get(k)||d};
+var to=g('to',''),from=g('from','Me');
+var $=function(i){return document.getElementById(i)};
+$('brand').textContent=(to?to+' + ':'You + ')+from;
+$('h').textContent=(to?to+', ':'')+'there\u2019s an upgrade waiting for you.';
+$('sub').textContent='Distance hasn\u2019t changed how much you mean to me. I\u2019d like us to be more, even from far apart. Here\u2019s what that would look like.';
+$('c1').textContent=g('city1','Me');$('c2').textContent=g('city2','You');
+$('t1').textContent=g('time1','');$('t2').textContent=g('time2','');
+var mi=g('miles','');
+$('dtxt').textContent=(mi?mi+' miles apart · ':'')+'for now';
+var perks=[g('p1','Video dates every week, not just catching up'),g('p2','You\u2019re the first person I call with good news'),g('p3','A plan to close the distance, together'),g('p4','Every visit counted down like a holiday')];
+$('perks').innerHTML=perks.map(function(p){var l=document.createElement('li');l.textContent=p;return l.outerHTML}).join('');
+function rows(el,a){el.innerHTML=a.map(function(r){var d=document.createElement('div'),s=document.createElement('span'),b=document.createElement('b');s.textContent=r[0];b.textContent=r[1];d.appendChild(s);d.appendChild(b);return d.outerHTML}).join('')}
+rows($('terms'),[['New plan','Girlfriend (long distance)'],['Price','Free, forever'],['Roaming charges','None, ever'],['Time zones','Handled, I\u2019ll adjust'],['Renewal','Automatic, and I\u2019ll keep choosing you'],['Distance','Temporary, with a plan'],['Payment method','Calls, texts, and bad jokes']]);
+rows($('receipt'),[['Plan','Girlfriend'],['Status','Active, worldwide'],['Billing','Never'],['Next call','Tonight'],['Next visit','Let\u2019s pick a date']]);
+for(var k=0;k<16;k++){var h=document.createElement('span');h.textContent='\u2665';h.style.left=(Math.random()*100)+'%';h.style.fontSize=(12+Math.random()*22)+'px';h.style.animationDuration=(12+Math.random()*14)+'s';h.style.animationDelay=(-Math.random()*20)+'s';document.getElementById('fh').appendChild(h)}
+var vs=['v1','v2','v3'];
+function show(id){vs.forEach(function(v){$(v).classList.toggle('on',v===id)});scrollTo(0,0)}
+$('go').onclick=$('go2').onclick=function(){show('v2')};
+$('back').onclick=function(){show('v1')};
+$('confirm').onclick=function(){show('v3');$('chip').textContent='Plan: Girlfriend';$('dist').classList.add('near');$('dtxt').textContent='Still far apart, but together';};
+</script>
+</body>
+</html>
